@@ -66,6 +66,20 @@ public class ReminderOverlay extends OverlayPanel
                             new Dimension(graphics.getFontMetrics().stringWidth(SHORT_TEXT) + 8, 0)
                     );
                     break;
+
+                case CUSTOM_TEXT:
+                    String custom = config.customText();
+                    if (custom == null || custom.trim().isEmpty())
+                    {
+                        custom = LONG_TEXT; // fallback if blank
+                    }
+                    panelComponent.getChildren().add(LineComponent.builder()
+                            .left(custom)
+                            .build());
+                    panelComponent.setPreferredSize(
+                            new Dimension(graphics.getFontMetrics().stringWidth(custom) + 8, 0)
+                    );
+                    break;
             }
 
             return panelComponent.render(graphics);

@@ -48,8 +48,8 @@ public interface ReminderConfig extends Config
 
     @ConfigItem(
             keyName = "ignoreClues",
-            name = "Ignore if carrying clues",
-            description = "Do not show reminder when you have any clue scroll in inventory"
+            name = "Ignore if carrying clues and caskets",
+            description = "Do not show reminder when you have any clue scroll or casket in inventory"
     )
     default boolean ignoreClues()
     {
